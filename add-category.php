@@ -17,11 +17,24 @@ if(!empty($_POST)){
         header("Location:add-category.php");
     }
 }
+
+$query="SELECT * FROM category";
+$data = mysqli_query($conn,$query);
+
+
 ?>
 <form action="" method="post">
     Category Name: <input type="text" name="name" required> <br><br>
     <button>Add Category</button>
 </form>
+
+<ul>
+    <?php foreach($data as $category){ ?>
+        <li><?php echo $category['name']; ?></li>
+    <?php } ?>
+</ul>
+
+
 <?php
 require_once 'footer.php';
 ?>

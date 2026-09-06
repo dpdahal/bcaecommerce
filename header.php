@@ -2,7 +2,6 @@
 session_start();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +11,23 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="index.php">Home</a>
-    <a href="about.php">About us</a>
-    <a href="category.php">Categories</a>
-    <a href="products.php">Products</a>
-    <a href="contact.php">Contact</a>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About us</a></li>
+                <li><a href="category.php">Categories</a></li>
+                <li><a href="product.php">Products</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="add-category.php">Add Category</a></li>
+                <li><a href="add-product.php">Add Product</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <?php if(isset($_SESSION['auth'])) { ?>
-        <a>Welcome: <?php echo $_SESSION['auth']['name']; ?> </a>
-        <a href="logout.php">Logout</a>
-        <a href="add-category.php">Add Category</a>
-        <a href="add-product.php">Add Product</a>
-        <?php } else { ?>
-        <a href="register.php">Register</a>
-        <a href="login.php">Login</a>
-    <?php } ?>
-    
-    
-    <hr>
+
     <?php if(isset($_SESSION['success'])) { ?>
         <h1><?=$_SESSION['success']; ?> </h1>
         <?php unset($_SESSION['success']); ?>

@@ -1,17 +1,33 @@
 <?php
 require_once "header.php";
 require_once "connection.php";
-
 $sql="SELECT * FROM products";
 $result =mysqli_query($conn,$sql);
 ?>
-<h1>Product List </h1>
 
-<?php foreach($result as $product) { ?>
-    <h1><?php echo $product['title'] ?></h1>
-    <img src="images/<?php echo $product['image'] ?>" width="200" height="200" />
-    <a href="product_details.php?slug=<?php echo $product['slug'] ?>">View Product</a>
-<?php } ?>
+<section class="container">
+    <div class="product-list">
+    <?php foreach($result as $product) { ?>
+        <div class="product-box">
+            <div class="product-image">
+                <img src="images/<?php echo $product['image']; ?>" 
+                alt="<?php echo $product['title']; ?>">
+            </div>
+            <div class="product-title">
+                <h2><?php echo $product['title']; ?></h2>
+            </div>
+            <div class="product-description">
+                <p><?php echo $product['description']; ?></p>
+            </div>
+            <div class="product-order">
+                <a href="product_details.php?slug=<?php echo $product['slug']; ?>">
+                    Product Details
+                </a>
+            </div>
+       </div>
+    <?php } ?>
+    </div>
+</section>
 
 <?php 
 require_once "footer.php";

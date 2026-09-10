@@ -20,7 +20,8 @@ $result =mysqli_query($conn,$sql);
                 <p><?php echo $product['description']; ?></p>
             </div>
             <div class="product-order">
-                <a href="product_details.php?slug=<?php echo $product['slug']; ?>">
+                <a class="btn-primary" 
+                href="product_details.php?slug=<?php echo $product['slug']; ?>">
                     Product Details
                 </a>
             </div>
@@ -28,7 +29,6 @@ $result =mysqli_query($conn,$sql);
     <?php } ?>
     </div>
 </section>
-
 <?php 
 require_once "footer.php";
 ?>

@@ -59,3 +59,24 @@ nav ul li a{
     object-fit: cover;
     border-radius: 10px;
 }
+
+.btn-primary{
+    min-width: 150px;
+    padding: 10px 20px;
+    background:rgb(16, 1, 127);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+
+
+.footer{
+    width: 100%;
+    background:rgb(16, 1, 127);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}

@@ -35,3 +35,15 @@ updated_at datetime,
 FOREIGN KEY (user_id) REFERENCES users(uid) ON DELETE RESTRICT,
 FOREIGN KEY (category_id) REFERENCES category(cid) ON DELETE RESTRICT
 );
+
+CREATE TABLE IF NOT EXISTS orders(
+oid int AUTO_INCREMENT PRIMARY KEY,
+user_id int,
+product_id int,
+quantity int,
+order_date datetime,
+foreign KEY (user_id) REFERENCES users(uid) on DELETE RESTRICT,
+foreign KEY (product_id) REFERENCES products(pid) ON DELETE RESTRICT
+
+);
+
